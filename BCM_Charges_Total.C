@@ -444,9 +444,9 @@ void BCM_Charges_Total(){
       time_d1_tot = rclk_beam_d1/clk_r;
       Qu1_tot = ( (u1c_beam/time_u1_tot-Koff_u1)/(Cv2f_u1) )*time_u1_tot;
       Qd1_tot = ( (d1c_beam/time_d1_tot-Koff_d1)/(Cv2f_d1) )*time_d1_tot;
-      
-      e_u1_tot = Qu1_tot*10E-6/e;
-      e_d1_tot = Qd1_tot*10E-6/e;
+
+      e_u1_tot = Qu1_tot*pow(10.,-6)/e;       //Previously accidentally had = Qu1_tot*10E-6/e;
+      e_d1_tot = Qd1_tot*pow(10.,-6)/e;       //Previously accidentally had = Qu1_tot*10E-6/e;
       
       Q_avg = (Qu1_tot + Qd1_tot)/2.;
       e_avg = (e_u1_tot + e_d1_tot)/2.;

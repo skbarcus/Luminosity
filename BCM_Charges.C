@@ -74,7 +74,7 @@ void BCM_Charges(Int_t run){
   Double_t Qu1_rough, Qd1_rough;           //Charges.
   Double_t time_rough = 0.;
   Double_t clk_r = 1024.;      //Clock frequency (Hz).
-  Double_t I_set = 40.*0.90;       //Target current for the beam to be set at.
+  Double_t I_set = 120.*0.90;       //Target current for the beam to be set at.
   Double_t e = 1.602E-19;      //e- charge (C).
 
   //These next two sets of calibration values are from BCM Calibration for E08-014, Patricia Solvignon July 2012.
@@ -431,8 +431,8 @@ void BCM_Charges(Int_t run){
   Qu1_tot = ( (u1c_beam/time_u1_tot-Koff_u1)/(Cv2f_u1) )*time_u1_tot;
   Qd1_tot = ( (d1c_beam/time_d1_tot-Koff_d1)/(Cv2f_d1) )*time_d1_tot;
   
-  e_u1_tot = Qu1_tot*10E-6/e;
-  e_d1_tot = Qd1_tot*10E-6/e;
+  e_u1_tot = Qu1_tot*pow(10,-6)/e;
+  e_d1_tot = Qd1_tot*pow(10,-6)/e;
 
   Q_avg = (Qu1_tot + Qd1_tot)/2.;
   e_avg = (e_u1_tot + e_d1_tot)/2.;
