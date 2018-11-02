@@ -165,6 +165,26 @@ void BCM_Charges_Total(){
       //Define histos.
       TH1F *h1 = new TH1F("h1",Form("Beam Current U1 Run %i",run) , nevts+1, 0, nevts);
       TH1F *h2 = new TH1F("h2",Form("Beam Current D1 Run %i",run) , nevts+1, 0, nevts);
+
+      gStyle->SetOptStat(0);
+      gStyle->SetTitleFontSize(0.08);
+      h1->GetYaxis()->CenterTitle(true);
+      h1->GetYaxis()->SetLabelSize(0.05);
+      h1->GetYaxis()->SetTitleSize(0.06);
+      h1->GetYaxis()->SetTitleOffset(0.75);
+      h1->GetXaxis()->CenterTitle(true);
+      h1->GetXaxis()->SetLabelSize(0.05);
+      h1->GetXaxis()->SetTitleSize(0.06);
+      h1->GetXaxis()->SetTitleOffset(0.75);
+
+      h2->GetYaxis()->CenterTitle(true);
+      h2->GetYaxis()->SetLabelSize(0.05);
+      h2->GetYaxis()->SetTitleSize(0.06);
+      h2->GetYaxis()->SetTitleOffset(0.75);
+      h2->GetXaxis()->CenterTitle(true);
+      h2->GetXaxis()->SetLabelSize(0.05);
+      h2->GetXaxis()->SetTitleSize(0.06);
+      h2->GetXaxis()->SetTitleOffset(0.75);
       
       // cout<<"!!!!!!!!!!!!!!!!"<<h1->GetBinNumber()<<endl;
       //Calculate and plot beam current over run period. BCM scalers update every 4 seconds.
